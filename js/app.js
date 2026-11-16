@@ -16,7 +16,7 @@ container.innerHTML = projects.map((project, index) => `
   <article class="project-card fade-up ${index % 3 === 0 ? 'project-featured' : ''}">
     <a href="${project.url}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${project.name}">
       <div class="project-image"><img src="${project.image}" alt="${project.name} website preview" loading="lazy"></div>
-      <div class="project-meta"><div><p>${project.type}</p><h3>${project.name}</h3></div><span aria-hidden="true">&nearr;</span></div>
+      <div class="project-meta"><div><p>${project.type}</p><h3>${project.name}</h3></div><span class="arrow-icon arrow-up-right" aria-hidden="true"></span></div>
     </a>
   </article>`).join('');
 

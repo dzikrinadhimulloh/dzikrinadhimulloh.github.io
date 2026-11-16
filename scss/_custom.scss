@@ -24,6 +24,41 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.arrow-icon {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  position: relative;
+  vertical-align: -0.08em;
+  flex: none;
+}
+.arrow-icon:before,
+.arrow-icon:after {
+  content: "";
+  position: absolute;
+}
+.arrow-icon:before {
+  height: 1.5px;
+  width: 0.82em;
+  left: 0.03em;
+  top: calc(50% - 0.75px);
+  background: currentColor;
+}
+.arrow-icon:after {
+  width: 0.38em;
+  height: 0.38em;
+  right: 0.04em;
+  top: calc(50% - 0.19em);
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  transform: rotate(45deg);
+}
+.arrow-up-right {
+  transform: rotate(-45deg);
+}
+.arrow-down {
+  transform: rotate(90deg);
+}
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -118,7 +153,7 @@ a {
 .hero h1,
 .section h2 {
   font-size: clamp(3.25rem, 6.3vw, 6.65rem);
-  letter-spacing: -0.07em;
+  letter-spacing: -0.03em;
   line-height: 0.98;
   font-weight: 800;
   margin: 0;
@@ -127,7 +162,7 @@ a {
 .section h2 em {
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.01em;
 }
 .hero h1 em {
   color: var(--blue);
@@ -339,8 +374,8 @@ a {
   color: var(--blue);
   transition: transform 0.3s;
 }
-.project-card:hover .project-meta > span {
-  transform: translate(4px, -4px);
+.project-card:hover .project-meta > .arrow-up-right {
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 .about {
   background: var(--ink);
@@ -392,14 +427,15 @@ a {
   overflow: hidden;
 }
 .contact-card:after {
-  content: "↗";
+  content: "";
   position: absolute;
-  right: -0.05em;
-  bottom: -0.3em;
-  font-size: clamp(12rem, 30vw, 31rem);
-  line-height: 1;
-  color: rgba(7, 17, 31, 0.08);
-  font-family: Arial, sans-serif;
+  width: clamp(10rem, 24vw, 25rem);
+  height: clamp(10rem, 24vw, 25rem);
+  right: clamp(-6rem, -8vw, -3rem);
+  bottom: clamp(-8rem, -10vw, -4rem);
+  border-top: clamp(1.5rem, 3vw, 3rem) solid rgba(7, 17, 31, 0.08);
+  border-right: clamp(1.5rem, 3vw, 3rem) solid rgba(7, 17, 31, 0.08);
+  transform: rotate(-45deg);
 }
 .contact-card > * {
   position: relative;
